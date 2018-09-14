@@ -1,0 +1,34 @@
+'''special methods or dunder methods '''
+
+class Employee:
+  raise_amt = 1.5
+
+  def __init__(self, first, last,pay):
+    self.first = first
+    self.last = last
+    self.email = 'first' +'last' + '@gmail.com'
+    self.pay =pay
+  def full_name(self):
+    return '{} {}'.format(self.first, self.last)
+  
+  def __repr__(self):
+    return "Employee('{}','{}', '{}')".format (self.first,self.last,self.pay)
+  
+  def __str__(self):
+    return '{} - {}'.format(self.full_name(), self.email)
+
+  def __add__(self,other):
+    return self.pay + other.pay
+  def __len__(self):
+    return len(self.full_name())
+emp1 = Employee('Corey','Schafer', 50000)
+emp2 = Employee('Ashok' ,'Kafle', 60000)
+print(emp1)
+print(emp1.__repr__())
+print(emp1.__str__())
+print(1+2)
+print(int.__add__(1,2))
+print(str.__add__('Ashok', 'Kafle'))
+print(emp1 + emp2)
+print(len(emp1))
+print(str(emp1))
